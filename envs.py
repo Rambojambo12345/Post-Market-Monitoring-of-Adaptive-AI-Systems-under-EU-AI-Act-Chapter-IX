@@ -3,10 +3,6 @@
 import random
 
 
-# (row, col), 1-indexed, row 3 on top:
-#   . . . +1
-#   . # . -1
-#   S . . .
 
 ROWS, COLS = 3, 4
 WALL, HAZARD, START = (2, 2), (2, 4), (1, 1)
@@ -112,11 +108,11 @@ class Opponent:
 
     def move(self, game):
         rules = [
-            lambda: game.winning_moves(self.me),        # R1 win now
-            lambda: game.winning_moves(self.other),     # R2 block
-            lambda: game.fork_moves(self.me),           # R3 fork
-            lambda: game.fork_moves(self.other),        # R4 block a fork
-            lambda: self.best_positional(game),         # R5 most open lines
+            lambda: game.winning_moves(self.me),        # R1 
+            lambda: game.winning_moves(self.other),     # R2 
+            lambda: game.fork_moves(self.me),           # R3 
+            lambda: game.fork_moves(self.other),        # R4 
+            lambda: self.best_positional(game),         # R5
         ]
         for rule in rules[:self.level]:
             options = rule()
