@@ -20,10 +20,9 @@ warnings.filterwarnings("ignore", message="divide by zero", module="frouros")
 
 def make_detectors(seed):
     return {
-        # Frouros concept drift detectors, default settings
+        # Frouros concept drift detectors
         "CUSUM (loss)": Streaming(CUSUM, "loss"),
         "Page-Hinkley (loss)": Streaming(PageHinkley, "loss"),
-        # default threshold 1.0 is unreachable on [0, 1]; 0.3 as in the Frouros docs
         "Geometric MA (loss)": Streaming(GeometricMovingAverage, "loss",
                                          GeometricMovingAverageConfig(lambda_=0.3)),
         "BOCD (loss)": Streaming(BOCD, "loss"),
@@ -36,7 +35,7 @@ def make_detectors(seed):
         "RDDM (failure)": Streaming(RDDM, "failed"),
         "ECDD-WT (failure)": Streaming(ECDDWT, "failed"),
         "STEPD (failure)": Streaming(STEPD, "failed"),
-        # data drift
+        # data drift ones
         "KS (return)": KS("ret"),
         "KS (states)": KS("states"),
         "KS (actions)": KS("actions"),
