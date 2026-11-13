@@ -1,6 +1,6 @@
 # Post-market monitoring under EU AI Act Chapter IX
 
-Code for *Post-Market Monitoring of Adaptive AI Systems under EU AI Act Chapter IX*. 
+Code for the article *XXXXXXXXXXXXXX*. 
 - **Maze** (environmental drift): 4x3 grid world, goal moves from C0 to C1-C4.
 - **Tic-tac-toe** (adversarial drift): opponent switches from random (R0) to R1-R5.
 
